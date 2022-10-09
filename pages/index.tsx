@@ -1,4 +1,6 @@
 import Layout from "components/common/Layout";
+import ProductCard from "components/product/productCard/ProductCard";
+import Grid from "components/ui/Grid/Grid";
 import type { NextPage, InferGetStaticPropsType } from "next";
 import getAllProducts from "../framework/shopify/product/get-all-product";
 
@@ -7,11 +9,11 @@ const Home = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
 
   getAllProducts();
   return (
-    <Layout>
-      <div>{JSON.stringify(products)}</div>
-      {/* <div>{products[0].images}</div> */}
-      {/* <div>123456</div> */}
-    </Layout>
+    <Grid>
+      {products.slice(0, 3).map((product) => {
+        return <ProductCard key={product.id} product={product} />;
+      })}
+    </Grid>
   );
 };
 
