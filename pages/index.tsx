@@ -4,22 +4,39 @@ import Grid from "components/ui/Grid/Grid";
 import type { NextPage, InferGetStaticPropsType } from "next";
 import getAllProducts from "../framework/shopify/product/get-all-product";
 import { Hero } from "@components/ui";
+import { Marquee } from "@components/ui";
 
 const Home = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
   const { products } = props;
 
   getAllProducts();
   return (
-    <>
+    <Layout>
       <div className="bg-black">
         <div>
           <Grid>
             {products.slice(0, 3).map((product) => {
-              return <ProductCard key={product.id} product={product} />;
+              return (
+                <ProductCard
+                  variant={"simple"}
+                  key={product.id}
+                  product={product}
+                />
+              );
             })}
           </Grid>
         </div>
-
+        <Marquee>
+          {products.slice(0, 3).map((product) => {
+            return (
+              <ProductCard
+                variant={"slim "}
+                key={product.id}
+                product={product}
+              />
+            );
+          })}
+        </Marquee>
         <Hero
           headline={"NUTX Shoe Shop"}
           description={
@@ -27,7 +44,7 @@ const Home = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
           }
         />
       </div>
-    </>
+    </Layout>
   );
 };
 
