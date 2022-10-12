@@ -10,17 +10,17 @@ interface HeropProps {
 const Hero: FC<HeropProps> = ({ headline, description }) => {
   return (
     <>
-      <div className="mx-auto">
-        <Container el={`div` as any}>
-          <div className="grid grid-cols-1 md:grid-cols-2 py-20 ">
-            <div className="text-4xl leading-10 font-extrabold text-white sm:text-5xl tracking-wide">
+      <div className="">
+        <Container>
+          <div className="flex flex-col justify-center md:flex-row py-10 ">
+            <div className="sm:text-sm sm:font-bold font-bold md:text-4xl leading-10  text-white ">
               <h2 className="mx-10">{headline}</h2>
             </div>
-            <div className="mt-5 text-white">
+            <div className="mt-5 text-white max-w-[600px]">
               <p className="">{description}</p>
-              <Link href={"#"} className="hover:underline cursor-pointer ">
+              <Link href={"#"} className=" cursor-pointer ">
                 <a>
-                  <button className="mt-4 p-6 font-extrabold bg-gray-400">
+                  <button className="mt-4 p-6 font-extrabold bg-gray-400 rounded-full hover:bg-gray-500 hover:underline">
                     read it here
                   </button>
                 </a>

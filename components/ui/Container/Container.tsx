@@ -8,7 +8,7 @@ interface ContainerProp {
 const Container: FC<ContainerProp> = ({ children, el: El = "div" }) => {
   return (
     <>
-      <El className="max-w-[1200px] mx-auto px-8 "> {children}</El>
+      <El className=" px-8 "> {children}</El>
     </>
   );
 };
