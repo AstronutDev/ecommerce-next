@@ -1,13 +1,14 @@
-import { FC, ReactNode } from "react";
+import React, { FC, HTMLAttributes, ReactNode } from "react";
 
 interface ContainerProp {
   children: ReactNode | ReactNode[];
+  el?: React.ComponentType<HTMLAttributes<HTMLElement>>;
 }
 
-const Container: FC<ContainerProp> = ({ children }) => {
+const Container: FC<ContainerProp> = ({ children, el: El = "div" }) => {
   return (
     <>
-      <div className="max-w-[1200px] mx-auto px-8 "> {children}</div>
+      <El className="max-w-[1200px] mx-auto px-8 "> {children}</El>
     </>
   );
 };

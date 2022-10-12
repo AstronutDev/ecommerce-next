@@ -11,7 +11,7 @@ const Hero: FC<HeropProps> = ({ headline, description }) => {
   return (
     <>
       <div className="mx-auto">
-        <Container>
+        <Container el={`div` as any}>
           <div className="grid grid-cols-1 md:grid-cols-2 py-20 ">
             <div className="text-4xl leading-10 font-extrabold text-white sm:text-5xl tracking-wide">
               <h2 className="mx-10">{headline}</h2>
