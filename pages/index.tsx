@@ -5,6 +5,7 @@ import type { NextPage, InferGetStaticPropsType } from "next";
 import getAllProducts from "../framework/shopify/product/get-all-product";
 import { Hero } from "@components/ui";
 import { Marquee } from "@components/ui";
+import { Nav } from "@components/ui";
 
 const Home = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
   const { products } = props;
@@ -12,6 +13,7 @@ const Home = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
   getAllProducts();
   return (
     <Layout>
+      <Nav />
       <div className="bg-black">
         <div>
           <Grid>
