@@ -13,7 +13,7 @@ const ProductCard: FC<Props> = (props) => {
   return (
     <>
       <Link href={`/product/${product?.slug}`}>
-        <div className="p-4 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
+        <div className="m-4 p-4 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-lg">
           <div className="font-bold cursor-pointer text-2xl">
             {product && product!.name}
           </div>
