@@ -1,4 +1,6 @@
 import Link from "next/link";
+import UserNav from "../UserNav";
+
 const Nav = () => {
   return (
     <>
@@ -31,6 +33,7 @@ const Nav = () => {
               <a className="Clothes">Shoe</a>
             </Link>
           </div>
+          <UserNav />
         </div>
       </div>
     </>
