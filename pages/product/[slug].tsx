@@ -5,6 +5,7 @@ import {
   InferGetStaticPropsType,
 } from "next";
 import GetAllProductPath from "@framework/product/get-all-products-path";
+import GetProduct from "@framework/product/get-product";
 
 //fetch all product slug
 export const getStaticPaths: GetStaticPaths = async () => {
@@ -23,11 +24,11 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps = async ({
   params,
 }: GetStaticPropsContext<{ slug: string }>) => {
+  const { product } = await GetProduct();
+
   return {
     props: {
-      product: {
-        slug: params?.slug,
-      },
+      product,
     },
   };
 };
@@ -37,6 +38,7 @@ const ProductSlug = ({
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <Layout>
+      <div>{product.name}</div>
       <div>{product.slug}</div>
     </Layout>
   );
