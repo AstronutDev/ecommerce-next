@@ -4,27 +4,17 @@ import {
   GetStaticPropsContext,
   InferGetStaticPropsType,
 } from "next";
+import GetAllProductPath from "@framework/product/get-all-products-path";
 
 //fetch all product slug
 export const getStaticPaths: GetStaticPaths = async () => {
+  const { products } = await GetAllProductPath();
   return {
-    paths: [
-      {
-        params: {
-          slug: "cool-hat",
-        },
+    paths: products.map((product) => ({
+      params: {
+        slug: product.slug,
       },
-      {
-        params: {
-          slug: "t-shirt",
-        },
-      },
-      {
-        params: {
-          slug: "lightweight-jacket",
-        },
-      },
-    ],
+    })),
     fallback: false,
   };
 };
