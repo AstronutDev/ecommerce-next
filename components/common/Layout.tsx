@@ -1,6 +1,7 @@
 import React, { FC } from "react";
 import { Footer } from "@components/ui";
-
+import { Sidebar } from "@components/ui";
+import { CartSidebar } from "@components/ui";
 type Props = {
   children: React.ReactNode;
 };
@@ -8,7 +9,9 @@ type Props = {
 const Layout: FC<Props> = ({ children }) => {
   return (
     <>
-      {/* <div className="bg-gradient-to-r from-cyan-500 to-blue-500 p-2 max-w-5xl m-auto h-full"> */}
+      <Sidebar>
+        <CartSidebar />
+      </Sidebar>
       <div>{children}</div>
       <div>
         <Footer />
