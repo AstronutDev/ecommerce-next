@@ -18,20 +18,6 @@ const GetAllProductPath = async (): Promise<ReturnType> => {
     };
   });
   return { products };
-
-  // return {
-  //   products: [
-  //     {
-  //       slug: "cool-hat",
-  //     },
-  //     {
-  //       slug: "t-shirt",
-  //     },
-  //     {
-  //       slug: "lightweight-jacket",
-  //     },
-  //   ],
-  // };
 };
 
 export default GetAllProductPath;
