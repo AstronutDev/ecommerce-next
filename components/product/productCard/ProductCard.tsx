@@ -35,13 +35,12 @@ const ProductCard: FC<Props> = ({ product, variant = "simple" }) => {
           </>
         ) : (
           <div className="m-4 p-4 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-lg">
-            <div className="font-bold cursor-pointer text-2xl">
-              {product && product!.name}
+            <div className="font-bold cursor-pointer text-2xl ">
+              <span className="bg-white p-2">{product && product!.name}</span>
             </div>
-            <div className="leading-loose">{product!.description}</div>
+            {/* <div className="leading-loose">{product!.description}</div> */}
             <div>
-              <span className="text-xl font-bold">
-                {" "}
+              <span className="text-xl font-bold bg-white p-2">
                 {product?.price.value} {product?.price.currencyCode}{" "}
               </span>
             </div>
