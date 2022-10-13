@@ -1,12 +1,14 @@
 import { Bag, Heart } from "../Icons";
-
+import useUI from "store/UIProvider/useUI.store";
 const UserNav = () => {
+  const { openSidebar } = useUI();
+
   return (
     <>
       <div>
         <ul className="flex flex-row cursor-pointer text-slate-500 p-1 space-x-4">
           <li className="transition ease-in-out delay-150 text-grey-500 hover:-translate-y-1 hover:scale-110 hover:text-indigo-500 duration-300 ">
-            <Bag className="h-4 w-4" />
+            <Bag className="h-4 w-4" onClick={openSidebar} />
           </li>
           <li className="transition ease-in-out delay-150 text-grey-500 hover:-translate-y-1 hover:scale-110 hover:text-red-500 duration-300 ">
             <Heart className="h-4 w-4" />
