@@ -16,11 +16,6 @@ const fetchAPi = async <T>({
     body: JSON.stringify({ query }),
   });
   const data = await response.json();
-
-  // if (error) {
-  //   console.log("🚀 ~ file: fetchApi.ts ~ line 16 ~ fetchAPi ~ errors", error);
-  //   throw new Error(error[0].message ?? error.message);
-  // }
   return data;
 };
 
