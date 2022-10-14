@@ -38,11 +38,11 @@ const ProductSlug = ({
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <Layout>
-      <div>{product?.name}</div>
+      {/* <div>{product?.name}</div>
       <div>{product?.slug}</div>
       <div>{product?.path}</div>
       <div>{product?.price.value}</div>
-      <div>{product?.price.currencyCode}</div>
+      <div>{product?.price.currencyCode}</div> */}
       <div>{JSON.stringify(product, null, 2)}</div>
     </Layout>
   );
