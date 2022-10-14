@@ -3,7 +3,8 @@ import { Container } from "@components/ui";
 import Image from "next/image";
 import { Product } from "@common/types/product";
 import ProductSlider from "../ProductSlider/ProductSlider";
-import KeenSlider from "keen-slider";
+import Button from "../../Button/Button";
+
 interface Props {
   product: Product;
 }
@@ -50,13 +51,13 @@ const ProductView: FC<Props> = ({ product }) => {
             </div>
           </section>
           <div>
-            <button
-              onClick={() => {}}
-              aria-label="Add to Cart"
-              className="text-center w-full max-w-[300px]"
+            <Button
+              onClick={() => {
+                alert("click");
+              }}
             >
               Add to Cart
-            </button>
+            </Button>
           </div>
         </div>
       </div>
