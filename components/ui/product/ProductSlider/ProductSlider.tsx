@@ -8,7 +8,7 @@ const ProductSlider: FC<ReturnType> = ({ children }) => {
   return (
     <>
       <div className="relative w-full h-full overflow-y-hidden">
-        <div className="h-full transition-opacity duration-150">{children}</div>
+        <div className="h-full transition-opacity">{children}</div>
       </div>
     </>
   );

@@ -2,6 +2,7 @@ import { FC } from "react";
 import { Container } from "@components/ui";
 import Image from "next/image";
 import { Product } from "@common/types/product";
+import ProductSlider from "../ProductSlider/ProductSlider";
 
 interface Props {
   product: Product;
@@ -20,16 +21,22 @@ const ProductView: FC<Props> = ({ product }) => {
               {product.price.value} {product.price.currencyCode}
             </div>
           </div>
-          <div className="absolute z-10 inset-0 flex items-center justify-center overflow-x-hidden">
-            <Image
-              className="w-full h-auto max-h-full object-cover"
-              src={"/product-image-placeholder.svg"}
-              alt={"Product Image"}
-              width={1050}
-              height={1050}
-              quality="85"
-            />
-          </div>
+          {/* slider-container  <div className="absolute z-10 inset-0 flex items-center justify-center overflow-x-hidden"> */}
+          \
+          <ProductSlider>
+            {product.images.map((img) => (
+              <div className="h-full" key={img.url}>
+                <Image
+                  className="w-full h-auto max-h-full object-cover"
+                  src={img.url}
+                  alt={img.alt}
+                  width={1050}
+                  height={1050}
+                  quality="85"
+                />
+              </div>
+            ))}
+          </ProductSlider>
         </div>
         <div className="flex flex-col col-span-1 mx-auto max-w-8xl px-6 w-full h-full">
           <section>
