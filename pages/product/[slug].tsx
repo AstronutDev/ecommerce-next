@@ -38,12 +38,48 @@ const ProductSlug = ({
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <Layout>
-      {/* <div>{product?.name}</div>
-      <div>{product?.slug}</div>
-      <div>{product?.path}</div>
-      <div>{product?.price.value}</div>
-      <div>{product?.price.currencyCode}</div> */}
-      <div>{JSON.stringify(product, null, 2)}</div>
+      <div>
+        <div>{product?.name}</div>
+        <div>{product?.slug}</div>
+        <div>{product?.path}</div>
+        <div>{product?.price.value}</div>
+        <div>{product?.price.currencyCode}</div>
+        <div>{product?.description}</div>
+      </div>
+
+      <div>
+        <h1>OPTION</h1>
+        {product?.options.map((option) => (
+          <div key={option.id}>
+            <div>Name: {option.displayName}</div>
+            {option.values.map((v) => (
+              <div key={v.label}>
+                <p>Lablel: {v.label}</p>
+                <p>Hex color: {v.hexColor}</p>
+              </div>
+            ))}
+          </div>
+        ))}
+      </div>
+
+      <div>
+        {product?.variants.map((variant) => (
+          <div key={variant.id}>
+            <p>Variant Name: {variant.name}</p>
+            {variant.options.map((vo) => (
+              <div key={vo.id}>
+                <p>Name:{vo.displayName}</p>
+                {vo.values.map((value) => (
+                  <div key={value.label}>
+                    <p>Label: {value.label}</p>
+                    <p>HexColor: {value.hexColor}</p>
+                  </div>
+                ))}
+              </div>
+            ))}
+          </div>
+        ))}
+      </div>
     </Layout>
   );
 };
