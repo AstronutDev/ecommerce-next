@@ -3,12 +3,14 @@ import { Container } from "@components/ui";
 import Image from "next/image";
 import { Product } from "@common/types/product";
 import ProductSlider from "../ProductSlider/ProductSlider";
-
+import KeenSlider from "keen-slider";
 interface Props {
   product: Product;
 }
 
 const ProductView: FC<Props> = ({ product }) => {
+  // const [slideRef] = useKeen
+
   return (
     <Container>
       <div className="relative grid items-start gap-8 grid-cols-1 overflow-x-hidden lg:grid-cols-2">
@@ -22,10 +24,9 @@ const ProductView: FC<Props> = ({ product }) => {
             </div>
           </div>
           {/* slider-container  <div className="absolute z-10 inset-0 flex items-center justify-center overflow-x-hidden"> */}
-          \
           <ProductSlider>
             {product.images.map((img) => (
-              <div className="h-full" key={img.url}>
+              <div className="h-full " key={img.url}>
                 <Image
                   className="w-full h-auto max-h-full object-cover"
                   src={img.url}
